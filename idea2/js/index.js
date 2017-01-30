@@ -2,6 +2,8 @@ $(document).ready(() => {
 	// $('#add-btn').on('click', addSoundEle);
 
 	$('#person').draggable({
+		start: function(){ufoHum.play()} ,
+		stop: function(){ufoHum.pause()},
 		drag: (event) => {
 			var target = event.target;
 
@@ -42,6 +44,15 @@ var cow = {};
 
 var playerX = 0;
 var playerZ = 0;
+
+var ufoHum = new Howl({
+			src: ['sound/ufoHum.mp3'],
+			autoplay: false,
+			loop:true,
+			pannerAttr: {
+				distanceModel: 'inverse'
+			}
+});
 
 
 function addSoundEle() {
