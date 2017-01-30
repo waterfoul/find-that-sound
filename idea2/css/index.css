@@ -1,3 +1,7 @@
+body {
+    background: #acd373;
+}
+
 #add-btn-container {
     position: absolute;
     bottom: 0;
@@ -10,6 +14,7 @@
     width: 400px;
     border: 1px solid black;
     background: url(field.jpg);
+    margin: 0 auto;
 }
 
 #person {
@@ -41,4 +46,16 @@ img {
 #person img {
     margin-right: -20px;
     margin-bottom: -20px;
+}
+
+.container {
+    text-align: center;
+}
+
+.title {
+    text-transform: uppercase;
+}
+
+#controls {
+    margin: 10px;
 }
