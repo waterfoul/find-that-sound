@@ -35,7 +35,7 @@ function addSoundEle() {
 			autoplay: true,
 			loop: true,
 			pannerAttr: {
-				distanceModel: 'linear'
+				distanceModel: 'inverse'
 			}
 		})
 	};
