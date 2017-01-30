@@ -59,3 +59,8 @@ img {
 #controls {
     margin: 10px;
 }
+
+.logo {
+    width: 200px;
+    height: auto !important;
+}
