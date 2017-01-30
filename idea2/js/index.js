@@ -31,7 +31,7 @@ function addSoundEle() {
 		X: (Math.random() * 4) - 2,
 		Z: (Math.random() * 4) - 2,
 		howl: new Howl({
-			src: ['sound/coin-spin-light.mp3'],
+			src: ['sound/cow.mp3'],
 			autoplay: true,
 			loop: true,
 			pannerAttr: {
