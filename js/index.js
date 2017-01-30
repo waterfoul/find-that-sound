@@ -1,7 +1,5 @@
 $(document).ready(() => {
 	$('#add-btn').on('click', addSoundEle);
-
-	Howler.pos(200, 200, 1);
 });
 
 var soundPanels = [];
@@ -22,8 +20,8 @@ function addSoundEle() {
 	soundPanel.data('id', soundPanels.length);
 	soundPanels.push({
 		panel: soundPanel,
-		x: 20,
-		y: 20
+		x: 0,
+		y: 0
 	});
 
 	var panelId = $('#space').append(soundPanel)
@@ -36,11 +34,11 @@ function onMove(event) {
 
 	var panelId = $(target).data('id');
 
-	soundPanels[panelId].X = X;
-	soundPanels[panelId].Y = Y;
+	soundPanels[panelId].X = (X - 200)/200;
+	soundPanels[panelId].Y = (Y - 200)/200;
 
 	if(soundPanels[panelId].howl) {
-		soundPanels[panelId].howl.pos(X, Y, 1);
+		soundPanels[panelId].howl.pos(soundPanels[panelId].X, soundPanels[panelId].Y, 1);
 	}
 }
 
