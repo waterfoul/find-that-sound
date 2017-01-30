@@ -21,7 +21,7 @@ var playerZ = 0;
 function addSoundEle() {
 	var soundPanel = $(
 		'<div style="top: 0px; left: 0px" class="sound-panel">' +
-		'<div class="crosshair">+</div>' +
+		'<div class="crosshair"><img src="css/cow.png"></div>' +
 		'</div>'
 	);
 

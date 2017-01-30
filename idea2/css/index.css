@@ -30,5 +30,14 @@
 .sound-panel {
     position: absolute;
     width: 200px;
-    height: 20px;
+    height: 200px;
+}
+
+img {
+    height: 40px;
+}
+
+.person img {
+    margin-right: -20px;
+    margin-bottom: -20px;
 }
