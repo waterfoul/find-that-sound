@@ -19,14 +19,19 @@ function onMove(event) {
 }
 
 function fileUpload(event){
-	var file    = event.srcElement.files[0];
-  var reader  = new FileReader();
+	var file = event.srcElement.files[0];
+	var reader = new FileReader();
 
-  reader.addEventListener("load", function () {
-    console.log(reader.result);
-  }, false);
+	reader.addEventListener("load", function () {
+		var data = reader.result;
+		var sound = new Howl({
+			src: [data]
+		});
 
-  if (file) {
-    reader.readAsDataURL(file);
-  }
+		sound.play();
+	}, false);
+
+	if (file) {
+		reader.readAsDataURL(file);
+	}
 }
