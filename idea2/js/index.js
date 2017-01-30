@@ -1,5 +1,5 @@
 $(document).ready(() => {
-	$('#add-btn').on('click', addSoundEle);
+	// $('#add-btn').on('click', addSoundEle);
 
 	$('#person').draggable({ drag: (event) => {
 		var target = event.target;
@@ -8,6 +8,8 @@ $(document).ready(() => {
 
 		Howler.pos(playerX, 1, playerZ);
 	} });
+
+	addSoundEle();
 });
 
 var soundPanels = [];
@@ -18,10 +20,8 @@ var playerZ = 0;
 
 function addSoundEle() {
 	var soundPanel = $(
-		'<div style="top: 0px; left: 0px" class="panel panel-default sound-panel">' +
+		'<div style="top: 0px; left: 0px" class="sound-panel">' +
 		'<div class="crosshair">+</div>' +
-		'<button class="btn btn-default" onclick="play(event)">Play</button>' +
-		'<button class="btn btn-default" onclick="pause(event)">Pause</button>' +
 		'</div>'
 	);
 
@@ -32,6 +32,7 @@ function addSoundEle() {
 		Z: (Math.random() * 4) - 2,
 		howl: new Howl({
 			src: ['sound/coin-spin-light.mp3'],
+			autoplay: true,
 			loop: true,
 			pannerAttr: {
 				distanceModel: 'linear'
@@ -49,6 +50,8 @@ function addSoundEle() {
 	// });
 
 	panelObj.panel = soundPanel;
+
+	panelObj.howl.pos(panelObj.X, 1, panelObj.Z);
 
 	var panelId = $('#space').append(soundPanel)
 }
