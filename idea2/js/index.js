@@ -17,8 +17,18 @@ $(document).ready(() => {
 
 			console.log([left, width, top, height], [(playerX - cow.X), (playerZ - cow.Z)], distanceToCow);
 
-			if(distanceToCow < 0.2) {
+			if(distanceToCow < 0.2 && !cow.found) {
+				cow.howl.pause();
 				cow.panel.show();
+
+				cow.found = true;
+				cow.howl = new Howl({
+					src: ['sound/death' + (Math.round(Math.random() * 4) + 1) + '.wav'],
+					autoplay: true,
+					pannerAttr: {
+						distanceModel: 'inverse'
+					}
+				})
 			}
 
 			Howler.pos(playerX, 1, playerZ);
