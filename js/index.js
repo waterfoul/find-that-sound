@@ -34,11 +34,11 @@ function onMove(event) {
 
 	var panelId = $(target).data('id');
 
-	soundPanels[panelId].X = (X - 200)/200;
-	soundPanels[panelId].Y = (Y - 200)/200;
+	soundPanels[panelId].X = (X - 200)/100;
+	soundPanels[panelId].Z = (Y - 200)/100;
 
 	if(soundPanels[panelId].howl) {
-		soundPanels[panelId].howl.pos(soundPanels[panelId].X, soundPanels[panelId].Y, 1);
+		soundPanels[panelId].howl.pos(soundPanels[panelId].X, 1, soundPanels[panelId].Z);
 	}
 }
 
@@ -52,9 +52,12 @@ function fileUpload(event){
 		var data = reader.result;
 		soundPanels[panelId].howl = new Howl({
 			src: [data],
-			loop: true
+			loop: true,
+			pannerAttr: {
+				distanceModel: 'linear'
+			}
 		});
-		soundPanels[panelId].howl.pos(soundPanels[panelId].X, soundPanels[panelId].Y, 1);
+		soundPanels[panelId].howl.pos(soundPanels[panelId].X, 1, soundPanels[panelId].Z);
 	}, false);
 
 	if (file) {
