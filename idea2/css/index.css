@@ -37,7 +37,7 @@ img {
     height: 40px;
 }
 
-.person img {
+#person img {
     margin-right: -20px;
     margin-bottom: -20px;
 }
