@@ -9,6 +9,7 @@
     height: 400px;
     width: 400px;
     border: 1px solid black;
+    background: url(field.jpg);
 }
 
 #person {
@@ -37,7 +38,7 @@ img {
     height: 40px;
 }
 
-.person img {
+#person img {
     margin-right: -20px;
     margin-bottom: -20px;
 }
